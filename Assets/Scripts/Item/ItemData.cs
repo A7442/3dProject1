@@ -5,8 +5,9 @@ using UnityEngine;
 public enum ItemType
 {
     Health,
-    Stemina,
-    Buff
+    Stamina,
+    Speed,
+    Jump
 }
 [System.Serializable]
 public class ItemDataUse
