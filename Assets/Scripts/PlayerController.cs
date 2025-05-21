@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
 
     private void LateUpdate()
     {
-        
+        CameraLook();
     }
 
     public void Onlook(InputAction.CallbackContext context)
@@ -59,9 +59,12 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void OnJump()
+    public void OnJump(InputAction.CallbackContext context)
     {
-        
+        if(context.phase == InputActionPhase.Started && IsGrounded())
+        {
+            _rigidbody.AddForce(Vector2.up * jumpPower, ForceMode.Impulse);
+        }
     }
 
     public void OnInteract()
@@ -78,8 +81,32 @@ public class PlayerController : MonoBehaviour
         _rigidbody.velocity = dir;
     }
 
-    private void Look()
+    private void CameraLook()
     {
-        
+        _camCurXRot += _mouseDelta.y * lookSensitivity;
+        _camCurXRot = Mathf.Clamp(_camCurXRot, minXLook, maxXLook);
+        cameraContainer.localEulerAngles = new Vector3(-_camCurXRot, 0, 0);
+
+        transform.eulerAngles += new Vector3(0, _mouseDelta.x * lookSensitivity, 0);
+    }
+
+    private bool IsGrounded()
+    {
+        Ray[] ray = new Ray[4]
+        {
+            new Ray(transform.position + (Vector3.forward * 0.2f) + (transform.up * 0.01f), Vector3.down),
+            new Ray(transform.position + (-Vector3.forward * 0.2f) + (transform.up * 0.01f), Vector3.down),
+            new Ray(transform.position + (Vector3.right * 0.2f) + (transform.up * 0.01f), Vector3.down),
+            new Ray(transform.position + (-Vector3.right * 0.2f) + (transform.up * 0.01f), Vector3.down)
+        };//곱한 값은 나중에 조정
+        for(int i = 0; i < ray.Length; i++)
+        {
+            if (Physics.Raycast(ray[i],1.1f,groundLayerMask))
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 }
