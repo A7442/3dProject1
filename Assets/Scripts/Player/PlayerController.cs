@@ -71,7 +71,7 @@ public class PlayerController : MonoBehaviour
     {
         if (context.phase == InputActionPhase.Started)
         {
-            
+            CharacterManager.Instance.Player.interaction.Interacting();
         }
     }
 
@@ -109,7 +109,6 @@ public class PlayerController : MonoBehaviour
                 return true;
             }
         }
-
         return false;
     }
 }
