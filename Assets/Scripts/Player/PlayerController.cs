@@ -67,9 +67,12 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void OnInteract()
+    public void OnInteract(InputAction.CallbackContext context)
     {
-        
+        if (context.phase == InputActionPhase.Started)
+        {
+            
+        }
     }
 
     private void Move()
