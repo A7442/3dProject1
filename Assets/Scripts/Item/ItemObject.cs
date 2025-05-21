@@ -20,6 +20,7 @@ public class ItemObject : MonoBehaviour,IInteractable
     {
         CharacterManager.Instance.Player.itemData = data;
         CharacterManager.Instance.Player.addItem?.Invoke();
+        //여기에 먹지 못하면 못먹는 것 넣어줘도 될듯
         Destroy(gameObject);
     }
 }

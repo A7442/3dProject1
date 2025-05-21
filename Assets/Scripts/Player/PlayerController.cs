@@ -75,6 +75,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void OnUseItem(InputAction.CallbackContext context)
+    {
+        
+    }
+
     private void Move()
     {
         Vector3 dir = transform.forward * _curMovementInput.y + transform.right * _curMovementInput.x;

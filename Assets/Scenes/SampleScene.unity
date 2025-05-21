@@ -2290,7 +2290,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 100}
-  m_SizeDelta: {x: 800, y: 200}
+  m_SizeDelta: {x: 950, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1905526116
 MonoBehaviour:
@@ -2340,11 +2340,11 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294967295
   m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSizeBase: 45
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 40
+  m_fontSizeMax: 50
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -2464,6 +2464,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1959657031}
   m_CullTransparentMesh: 1
+--- !u!1001 &1995385909
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2115176241909907218, guid: ab038e8470c095d47998a7388ad862c8, type: 3}
+      propertyPath: m_Name
+      value: Item_RockCandy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6391665173746161418, guid: ab038e8470c095d47998a7388ad862c8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -31
+      objectReference: {fileID: 0}
+    - target: {fileID: 6391665173746161418, guid: ab038e8470c095d47998a7388ad862c8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6391665173746161418, guid: ab038e8470c095d47998a7388ad862c8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6391665173746161418, guid: ab038e8470c095d47998a7388ad862c8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6391665173746161418, guid: ab038e8470c095d47998a7388ad862c8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6391665173746161418, guid: ab038e8470c095d47998a7388ad862c8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6391665173746161418, guid: ab038e8470c095d47998a7388ad862c8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6391665173746161418, guid: ab038e8470c095d47998a7388ad862c8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6391665173746161418, guid: ab038e8470c095d47998a7388ad862c8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6391665173746161418, guid: ab038e8470c095d47998a7388ad862c8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ab038e8470c095d47998a7388ad862c8, type: 3}
 --- !u!1 &2004975185
 GameObject:
   m_ObjectHideFlags: 0
@@ -2805,3 +2862,4 @@ SceneRoots:
   - {fileID: 1496720983}
   - {fileID: 5994521467473665733}
   - {fileID: 559060054}
+  - {fileID: 1995385909}
