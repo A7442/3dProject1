@@ -32,7 +32,7 @@ Unity를 활용한 3D 게임 개발 연습 프로젝트입니다.
 
 ## 🧾 사용 기술
 
-- Unity 3D (버전 명시 추천)
+- Unity 3D (2022.3.17f1)
 - C#
 - Input System
 - ScriptableObject
