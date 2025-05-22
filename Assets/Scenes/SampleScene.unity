@@ -208,6 +208,7 @@ GameObject:
   m_Component:
   - component: {fileID: 376543541}
   - component: {fileID: 376543542}
+  - component: {fileID: 376543543}
   m_Layer: 0
   m_Name: Inventory
   m_TagString: Untagged
@@ -262,6 +263,21 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &376543543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 376543540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8240b852283b0cd438196bfdb8fdc444, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slots:
+  - {fileID: 1677329630}
+  - {fileID: 1589579643}
 --- !u!1 &400361513
 GameObject:
   m_ObjectHideFlags: 0
@@ -1887,6 +1903,7 @@ GameObject:
   - component: {fileID: 1589579640}
   - component: {fileID: 1589579642}
   - component: {fileID: 1589579641}
+  - component: {fileID: 1589579643}
   m_Layer: 0
   m_Name: 2
   m_TagString: Untagged
@@ -1953,6 +1970,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1589579639}
   m_CullTransparentMesh: 1
+--- !u!114 &1589579643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1589579639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aac96e20b46ddd9468682c009a2a203b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 0}
+  inventory: {fileID: 0}
+  icon: {fileID: 0}
+  index: 0
 --- !u!1 &1677329626
 GameObject:
   m_ObjectHideFlags: 0
@@ -1964,6 +1997,7 @@ GameObject:
   - component: {fileID: 1677329627}
   - component: {fileID: 1677329629}
   - component: {fileID: 1677329628}
+  - component: {fileID: 1677329630}
   m_Layer: 0
   m_Name: 1
   m_TagString: Untagged
@@ -2030,6 +2064,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1677329626}
   m_CullTransparentMesh: 1
+--- !u!114 &1677329630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1677329626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aac96e20b46ddd9468682c009a2a203b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 0}
+  inventory: {fileID: 0}
+  icon: {fileID: 0}
+  index: 0
 --- !u!1 &1728204464
 GameObject:
   m_ObjectHideFlags: 0

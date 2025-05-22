@@ -20,9 +20,4 @@ public class ItemSlot : MonoBehaviour
         item = null;
         icon.gameObject.SetActive(false);
     }
-
-    public void OnClickButton()
-    {
-        //inventory.SelectItem(index);
-    }
 }

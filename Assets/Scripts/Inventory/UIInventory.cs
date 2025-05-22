@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class UIInventory : MonoBehaviour
 {
     public ItemSlot[] slots;
-
+    public Transform slotPanel;
     [Header("Selected Item")]
     private ItemSlot selectedItem;
     private int selectedItemIndex;
@@ -21,11 +21,12 @@ public class UIInventory : MonoBehaviour
         controller = CharacterManager.Instance.Player.controller;
         condition = CharacterManager.Instance.Player.condition;
         CharacterManager.Instance.Player.addItem += AddItem;
-        
+        Debug.Log("시작 더하기");
         slots = new ItemSlot[2];
 
         for(int i = 0; i < slots.Length; i++)
         {
+            slots[i] = slotPanel.GetChild(i).GetComponent<ItemSlot>();
             slots[i].index = i;
             slots[i].inventory = this;
             slots[i].Clear();
@@ -40,6 +41,7 @@ public class UIInventory : MonoBehaviour
 
     public void AddItem()
     {
+        Debug.Log("아이템 더하기");
         ItemData data = CharacterManager.Instance.Player.itemData;
         
         ItemSlot emptySlot = GetEmptySlot();
@@ -49,6 +51,7 @@ public class UIInventory : MonoBehaviour
             emptySlot.item = data;
             UpdateUI();
         }
+        //else문으로 null일 때 ItemObject에 Destroy를 막던가 드롭 포지션을 만들어서 다시 떨구든가 해야함
         CharacterManager.Instance.Player.itemData = null;
     }
 
