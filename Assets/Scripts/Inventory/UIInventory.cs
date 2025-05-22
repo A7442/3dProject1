@@ -1,7 +1,6 @@
-using TMPro;
+using System.Collections;
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.InputSystem;
+
 
 public class UIInventory : MonoBehaviour
 {
@@ -21,7 +20,6 @@ public class UIInventory : MonoBehaviour
         controller = CharacterManager.Instance.Player.controller;
         condition = CharacterManager.Instance.Player.condition;
         CharacterManager.Instance.Player.addItem += AddItem;
-        Debug.Log("시작 더하기");
         slots = new ItemSlot[2];
 
         for(int i = 0; i < slots.Length; i++)
@@ -41,7 +39,6 @@ public class UIInventory : MonoBehaviour
 
     public void AddItem()
     {
-        Debug.Log("아이템 더하기");
         ItemData data = CharacterManager.Instance.Player.itemData;
         
         ItemSlot emptySlot = GetEmptySlot();
@@ -70,18 +67,6 @@ public class UIInventory : MonoBehaviour
         }
     }
 
-    ItemSlot GetItemStack(ItemData data)
-    {
-        for(int i = 0; i < slots.Length; i++)
-        {
-            if (slots[i].item == data)
-            {
-                return slots[i];
-            }
-        }
-        return null;
-    }
-
     ItemSlot GetEmptySlot()
     {
         for(int i = 0; i < slots.Length; i++)
@@ -94,11 +79,52 @@ public class UIInventory : MonoBehaviour
         return null;
     }
     
-    public void SelectItem(int index)
+    
+    public void UseItem(int index)
     {
         if (slots[index].item == null) return;
 
         selectedItem = slots[index];
         selectedItemIndex = index;
+        switch (selectedItem.item.type)
+        {
+            case ItemType.Health :
+                condition.Heal(selectedItem.item.value);
+                break;
+            case ItemType.Speed :
+                float plusSpeed = selectedItem.item.value;
+                StartCoroutine(SpeedBuff(plusSpeed));
+                break;
+            case ItemType.Jump :
+                float plusJump = selectedItem.item.value;
+                StartCoroutine(JumpBuff(plusJump));
+                break;
+        }
+        slots[selectedItemIndex].Clear();
+        ClearSelectedItemWindow();
     }
+    IEnumerator SpeedBuff(float plusSpeed)
+    {
+        CharacterManager.Instance.Player.controller.moveSpeed += plusSpeed;
+        slots[selectedItemIndex].Clear();
+        ClearSelectedItemWindow();
+        Debug.Log("스피드 버프 시작");
+        yield return new WaitForSeconds(3f);
+        CharacterManager.Instance.Player.controller.moveSpeed -= plusSpeed;
+        Debug.Log("스피드 버프 종료");
+    }
+    
+    IEnumerator JumpBuff(float plusJump)
+    {
+        CharacterManager.Instance.Player.controller.jumpPower += plusJump;
+        slots[selectedItemIndex].Clear();
+        ClearSelectedItemWindow();
+
+        Debug.Log("점프 버프 시작");
+        yield return new WaitForSeconds(3f);
+        CharacterManager.Instance.Player.controller.jumpPower -= plusJump;
+        Debug.Log("점프 버프 종료");
+    }
+    //이제 와서 바꾸기 뭐하지만 나중에는 버프를 따로 만들고
+    //그 안에서 버프를 또 enum을 활용하여 구분하기
 }

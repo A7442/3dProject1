@@ -30,6 +30,8 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        moveSpeed = 5.0f;
+        jumpPower = 80.0f;
     }
 
     private void FixedUpdate()
@@ -75,11 +77,21 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void OnUseItem(InputAction.CallbackContext context)
+    public void OnUseFirstItem(InputAction.CallbackContext context)
     {
-        
+        if (context.phase == InputActionPhase.Started)
+        {
+            CharacterManager.Instance.Player.Inventory.UseItem(0);
+        }
     }
-
+    
+    public void OnUseSecondItem(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Started)
+        {
+            CharacterManager.Instance.Player.Inventory.UseItem(1);
+        }
+    }
     private void Move()
     {
         Vector3 dir = transform.forward * _curMovementInput.y + transform.right * _curMovementInput.x;

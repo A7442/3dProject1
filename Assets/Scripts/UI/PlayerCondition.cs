@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class PlayerCondition : MonoBehaviour
@@ -29,4 +30,5 @@ public class PlayerCondition : MonoBehaviour
     {
         
     }
+    
 }

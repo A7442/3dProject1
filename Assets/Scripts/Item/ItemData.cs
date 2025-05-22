@@ -9,17 +9,12 @@ public enum ItemType
     Speed,
     Jump
 }
-[System.Serializable]
-public class ItemDataUse
-{
-    public ItemType type;
-    public float value;
-}
 [CreateAssetMenu(fileName ="Item", menuName = "New Item")]
 public class ItemData : ScriptableObject
 {
     public string displayName;
     public string description;
     public ItemType type;
+    public float value;
     public Sprite icon;
 }

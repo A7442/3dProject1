@@ -7,6 +7,8 @@ public class Player : MonoBehaviour
     public PlayerCondition condition;
     public PlayerInteraction interaction;
 
+    public UIInventory Inventory;
+    
     public ItemData itemData;
     public Action addItem;
     

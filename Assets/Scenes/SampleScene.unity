@@ -278,6 +278,7 @@ MonoBehaviour:
   slots:
   - {fileID: 1677329630}
   - {fileID: 1589579643}
+  slotPanel: {fileID: 376543541}
 --- !u!1 &400361513
 GameObject:
   m_ObjectHideFlags: 0
@@ -1651,6 +1652,7 @@ MonoBehaviour:
   controller: {fileID: 0}
   condition: {fileID: 0}
   interaction: {fileID: 0}
+  Inventory: {fileID: 376543543}
   itemData: {fileID: 0}
 --- !u!114 &1469662771
 MonoBehaviour:
@@ -1789,6 +1791,38 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 32b65037-d4ad-42ed-aa1a-5dd6c95ae573
     m_ActionName: Player/Interact[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1469662771}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnUseFirstItem
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: a00fad50-1784-46aa-9108-f2bf45015930
+    m_ActionName: Player/Item1[/Keyboard/1]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1469662771}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnUseSecondItem
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: e8adda18-1c0d-404c-a621-84016a806cc7
+    m_ActionName: Player/Item2[/Keyboard/2]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -1984,7 +2018,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 0}
   inventory: {fileID: 0}
-  icon: {fileID: 0}
+  icon: {fileID: 1728204466}
   index: 0
 --- !u!1 &1677329626
 GameObject:
@@ -2078,7 +2112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 0}
   inventory: {fileID: 0}
-  icon: {fileID: 0}
+  icon: {fileID: 409823856}
   index: 0
 --- !u!1 &1728204464
 GameObject:
