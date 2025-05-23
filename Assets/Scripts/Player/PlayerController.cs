@@ -65,7 +65,7 @@ public class PlayerController : MonoBehaviour
     {
         if(context.phase == InputActionPhase.Started && IsGrounded())
         {
-            if (CanDo(10))
+            if (CharacterManager.Instance.Player.condition.ConsumptionStamina(10))
             {
                 _rigidbody.AddForce(Vector2.up * jumpPower, ForceMode.Impulse);
             }
@@ -129,11 +129,6 @@ public class PlayerController : MonoBehaviour
                 return true;
             }
         }
-        return false;
-    }
-
-    private bool CanDo(float stamina)//스테미나 소비 체크
-    {
         return false;
     }
 }

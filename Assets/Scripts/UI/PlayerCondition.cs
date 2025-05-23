@@ -26,6 +26,16 @@ public class PlayerCondition : MonoBehaviour
         health.Add(amount);
     }
 
+    public bool ConsumptionStamina(float amount)
+    {
+        if (stamina.curValue < amount)
+        {
+            return false;
+        }
+        stamina.Subtract(amount);
+        return true;
+    }
+
     public void Die()
     {
         

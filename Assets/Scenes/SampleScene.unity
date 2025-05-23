@@ -1367,7 +1367,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   curValue: 100
   maxValue: 100
-  startValue: 100
+  startValue: 80
   passiveValue: 0
   uiBar: {fileID: 302981473}
 --- !u!1001 &1251962304
